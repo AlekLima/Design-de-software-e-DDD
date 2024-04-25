@@ -1,0 +1,24 @@
+{
+  "name": "design-de-software-e-ddd",
+  "version": "1.0.0",
+  "description": "Design dirigido à domínio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlekLima/Design-de-software-e-DDD.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlekLima/Design-de-software-e-DDD/issues"
+  },
+  "homepage": "https://github.com/AlekLima/Design-de-software-e-DDD#readme",
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "typescript": "^5.4.5"
+  }
+}
