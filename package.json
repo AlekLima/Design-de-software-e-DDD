@@ -19,6 +19,7 @@
   "homepage": "https://github.com/AlekLima/Design-de-software-e-DDD#readme",
   "devDependencies": {
     "@types/node": "^20.12.7",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "vitest": "^1.5.2"
   }
 }
