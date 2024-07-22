@@ -14,7 +14,7 @@ interface QuestionProps {
   updatedAt?: Date
 }
 
-export default class Question extends Entity<QuestionProps> {
+export class Question extends Entity<QuestionProps> {
   get content() {
     return this.props.content
   }
