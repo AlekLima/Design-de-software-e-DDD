@@ -2,6 +2,7 @@ import { QuestionsRepository } from "@/domain/forum/application/repositories/que
 import { Question } from "@/domain/forum/enterprise/entities/question";
 
 export class inMemoryQuestionsRepository implements  QuestionsRepository {
+    
     public items: Question[] = []
 
     async findById(id: string) {
@@ -32,5 +33,11 @@ export class inMemoryQuestionsRepository implements  QuestionsRepository {
         const itemIndex = this.items.findIndex(item => item.id === question.id)
 
         this.items.splice(itemIndex, 1)
+    }
+
+    async save(question: Question) {
+        const itemIndex = this.items.findIndex(item => item.id === question.id)
+
+        this.items[itemIndex] = question   
     }
 }
