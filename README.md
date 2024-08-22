@@ -20,3 +20,5 @@ Design dirigido à domínio
 - Subdomínios (Bounded Contexts)
 - Entidades
 - Casos de uso 
+
+ ¯\_(ツ)_/¯
