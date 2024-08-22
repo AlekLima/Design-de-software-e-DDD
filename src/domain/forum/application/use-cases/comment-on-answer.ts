@@ -37,5 +37,9 @@ export class CommentOnAnswerUseCase {
     })
 
     await this.answerCommentRepository.create(answerComment)
+
+    return {
+        answerComment,
+    }
   }
 }
