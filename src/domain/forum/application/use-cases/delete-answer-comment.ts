@@ -21,11 +21,11 @@ export class DeleteAnswerCommentUseCase {
     const answerComment = await this.answerCommentRepository.findById(answerCommentId)
 
     if (!answerComment) {
-        return left('Answer Comment')
+        return left('Answer comment not found')
     }
 
     if (answerComment.authorId.toString() !== authorId) {
-        return left('Not Allowed')
+        return left('Not allowed')
     }
 
     
