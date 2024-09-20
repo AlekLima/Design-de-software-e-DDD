@@ -2,14 +2,18 @@ import { UniqueEntityID } from '@/core/entities/unique-entity-id'
 import { Question } from '../../enterprise/entities/question'
 import { AnswersRepository } from '../repositories/answers-repository'
 import { QuestionsRepository } from '../repositories/questions-repository'
+import { Either, right } from '@/core/either'
 
 interface FetchRecentQuestionsUseCaseRequest {
   page: number
 }
 
-interface FetchRecentQuestionsUseCaseResponse {
+type FetchRecentQuestionsUseCaseResponse = Either<
+  null,
+  {
     questions: Question[]
   }
+>
 
 export class FetchRecentQuestionsUseCase {
   constructor(private questionRepository: QuestionsRepository) {}
@@ -21,8 +25,8 @@ export class FetchRecentQuestionsUseCase {
 
    
 
-    return {
-        questions,
-    }
+    return right({
+      questions,
+    })
   }
 }
