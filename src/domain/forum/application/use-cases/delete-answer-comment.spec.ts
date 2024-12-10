@@ -4,13 +4,15 @@ import { UniqueEntityID } from '@/core/entities/unique-entity-id'
 import { inMemoryAnswerCommentRepository } from '@/test/repositories/in-memory-answers-comments-repository'
 import { Left } from '@/core/either'
 import { NotAllowedError } from './errors/not-allowed-error'
+import { inMemoryAnswerAttachmentsRepository } from '@/test/repositories/in-memory-answers-attachments-repository'
 
-
+let inMemoryAnswerAttachmentRepository: inMemoryAnswerAttachmentsRepository
 let inMemoryAnswersCommentRepository: inMemoryAnswerCommentRepository
 let sut: DeleteAnswerCommentUseCase
 
 describe('Delete Comment on Answer', () => {
   beforeEach(() => {
+    inMemoryAnswerAttachmentRepository = new inMemoryAnswerAttachmentsRepository()
     inMemoryAnswersCommentRepository = new inMemoryAnswerCommentRepository()
 
     sut = new DeleteAnswerCommentUseCase(

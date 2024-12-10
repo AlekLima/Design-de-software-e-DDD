@@ -6,15 +6,17 @@ import { makeAnswer } from '@/test/factories/make-answer'
 import { ChooseQuestionBestAnswerUseCase } from './choose-question-best-answer'
 import { makeQuestion } from '@/test/factories/make-question'
 import { CommentOnQuestionUseCase } from './comment-on-question'
+import { inMemoryQuestionAttachmentRepository } from '@/test/repositories/in-memory-question-attachments'
 
-
+let inMemoryQuestionAttachmentsRepository: inMemoryQuestionAttachmentRepository
 let inMemoryQuestionRepository: inMemoryQuestionsRepository
 let inMemoryQuestionsCommentRepository: inMemoryQuestionCommentRepository
 let sut: CommentOnQuestionUseCase
 
 describe('Comment on Question', () => {
   beforeEach(() => {
-    inMemoryQuestionRepository = new inMemoryQuestionsRepository()
+    inMemoryQuestionAttachmentsRepository = new inMemoryQuestionAttachmentRepository()
+    inMemoryQuestionRepository = new inMemoryQuestionsRepository(inMemoryQuestionAttachmentsRepository)
     inMemoryQuestionsCommentRepository = new inMemoryQuestionCommentRepository()
 
     sut = new CommentOnQuestionUseCase(
