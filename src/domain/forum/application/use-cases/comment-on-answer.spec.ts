@@ -11,9 +11,14 @@ let sut: CommentOnAnswerUseCase
 
 describe('Comment on Answer', () => {
   beforeEach(() => {
-    inMemoryAnswerAttachmentRepository = new inMemoryAnswerAttachmentsRepository()
-    inMemoryAnswerRepository = new inMemoryAnswersRepository(inMemoryAnswerAttachmentRepository)
-    inMemoryAnswersCommentRepository = new inMemoryAnswerCommentRepository()
+    inMemoryAnswerAttachmentRepository = 
+    new inMemoryAnswerAttachmentsRepository()
+    inMemoryAnswerRepository = 
+    new inMemoryAnswersRepository(
+      inMemoryAnswerAttachmentRepository
+    )
+    inMemoryAnswersCommentRepository = 
+    new inMemoryAnswerCommentRepository()
 
     sut = new CommentOnAnswerUseCase(
         inMemoryAnswerRepository,

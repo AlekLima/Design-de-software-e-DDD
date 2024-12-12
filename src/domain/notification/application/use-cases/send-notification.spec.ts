@@ -21,7 +21,7 @@ describe('Send Notification', () => {
     })
 
     expect(result.isRight()).toBe(true)
-    expect(inMemoryNotificationRepository.items[0].id).toEqual(
+    expect(inMemoryNotificationRepository.items[0]).toEqual(
         result.value?.notification,
     )
   })  
