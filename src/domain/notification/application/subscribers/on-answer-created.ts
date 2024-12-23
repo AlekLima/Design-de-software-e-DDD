@@ -1,7 +1,7 @@
 import { DomainEvents } from "@/core/events/domain-events"
-import { AnswerCreatedEvent } from "../../enterprise/entities/events/answer-created-event"
+import { AnswerCreatedEvent } from "../../../forum/enterprise/entities/events/answer-created-event"
 import { EventHandler } from "@/core/events/event-handler"
-import { QuestionsRepository } from "../repositories/questions-repository"
+import { QuestionsRepository } from "../../../forum/application/repositories/questions-repository"
 import { SendNotificationUseCase } from "@/domain/notification/application/use-cases/send-notification"
 
 export class OnAnswerCreated implements EventHandler {
@@ -22,8 +22,10 @@ export class OnAnswerCreated implements EventHandler {
         )
 
         if (question) {
-            await this.sendNewAnswerNotification.execute({
-                recipientId: question?.authorId
+            await this.sendNotification.execute({
+                recipientId: question?.authorId.toString(),
+                title: `Nova resposta em "${question.title.substring(0, 40).concat('...')}"`,
+                content: answer.excerpt,
             })
         }
     }
