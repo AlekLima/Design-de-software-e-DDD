@@ -1,5 +1,5 @@
 🧠 Project Overview
-This repo looks like a learning or practice project focused on Software Design Principles and Domain-Driven Design (DDD). You're applying clean architecture principles, SOLID, and DDD concepts in a backend API structure.
+A practice project focused on Software Design Principles and Domain-Driven Design (DDD). applying clean architecture principles, SOLID, and DDD concepts in a backend API structure.
 
 📁 Folder Structure (src/)
 1. @core/
@@ -41,36 +41,36 @@ Especially the Dependency Inversion Principle – application logic depends on a
 Clean Architecture
 Very classic layered approach, which makes the code scalable and testable.
 
-
-
-
-
-
-
-
-
-
-
-
 # DDD (Domain-driven Design)
 
-Design dirigido à domínio
+Domain-Driven Design
+Domain
+Domain Experts
 
-### Domínio
+Conversation
 
-- Domain Experts
-    - Conversa
-- Linguagem ubíqua
+Ubiquitous Language
 
-- Usuário
-    -Cliente
-    -Fornecedor
-    -Atendente
-    -Barman
+User
 
-- Agregados
-- Value Objects
-- Eventos de domínio
-- Subdomínios (Bounded Contexts)
-- Entidades
-- Casos de uso 
+Client
+
+Supplier
+
+Attendant
+
+Barman
+
+Aggregates
+
+Value Objects
+
+Domain Events
+
+Subdomains (Bounded Contexts)
+
+Entities
+
+Use Cases
+
+Let me know if you want
